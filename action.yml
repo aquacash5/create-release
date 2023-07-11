@@ -19,7 +19,7 @@ inputs:
     required: false
     default: false
   prerelease:
-    description: '`true` to identify the release as a prerelease. `false` to identify the release as a full release. Default: `false`'
+    description: '`true` to identify the release as a prerelease. `false` to identify the release as a full release. Default: `true` if the tag contains a hyphen'
     required: false
     default: false
   commitish:
@@ -39,7 +39,7 @@ outputs:
   upload_url:
     description: 'The URL for uploading assets to the release'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 branding:
   icon: 'tag'
