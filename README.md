@@ -1,20 +1,20 @@
 # GitHub Action - Releases API
 
-This GitHub Action (written in JavaScript) wraps the [GitHub Release API](https://developer.github.com/v3/repos/releases/), specifically the [Create a Release](https://developer.github.com/v3/repos/releases/#create-a-release) endpoint, to allow you to leverage GitHub Actions to create releases.
+This GitHub Action (written in JavaScript) wraps the [GitHub Release API](https://docs.github.com/en/rest/releases/releases), specifically the [Create a Release](https://docs.github.com/en/rest/releases/releases#create-a-release) endpoint, to allow you to leverage GitHub Actions to create releases.
 
 ## Usage
 
 ### Inputs
 
-For more information on these inputs, see the [API Documentation](https://developer.github.com/v3/repos/releases/#input)
+For more information on these inputs, see the [`action.yml`](/action.yml)
 
-- `tag_name`: The name of the tag for this release
-- `release_name`: The name of the release
+- `tag_name`: The name of the tag for this release.
+- `release_name`: The name of the release.
 - `body`: Text describing the contents of the release. Optional, and not needed if using `body_path`.
 - `body_path`: A file with contents describing the release. Optional, and not needed if using `body`.
 - `draft`: `true` to create a draft (unpublished) release, `false` to create a published one. Default: `false`
-- `prerelease`: `true` to identify the release as a prerelease. `false` to identify the release as a full release. Default: `true` if the tag contains a hyphen
-- `commitish` : Any branch or commit SHA the Git tag is created from, unused if the Git tag already exists. Default: SHA of current commit
+- `prerelease`: `true` to identify the release as a prerelease. `false` to identify the release as a full release. Default: `true` if the tag contains a hyphen.
+- `commitish` : Any branch or commit SHA the Git tag is created from, unused if the Git tag already exists. Default: SHA of current commit.
 - `owner`: The name of the owner of the repo. Used to identify the owner of the repository. Used when cutting releases for external repositories. Default: Current owner
 - `repo`: The name of the repository. Used to identify the repository on which to release. Used when cutting releases for external repositories. Default: Current repository
 
@@ -24,7 +24,7 @@ The `body_path` is valuable for dynamically creating a `.md` within code commits
 
 ### Outputs
 
-For more information on these outputs, see the [API Documentation](https://developer.github.com/v3/repos/releases/#response-4) for an example of what these outputs look like
+For more information on these outputs, see the [API Documentation](https://developer.github.com/v3/repos/releases/#response-4) for an example of what these outputs look like.
 
 - `id`: The release ID
 - `html_url`: The URL users can navigate to in order to view the release. i.e. `https://github.com/octocat/Hello-World/releases/v1.0.0`
